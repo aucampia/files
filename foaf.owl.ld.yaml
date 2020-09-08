@@ -1,4 +1,12 @@
-'@context': /home/E1258170/syncthing/sw-wpw/d/gitlab.com/aucampia/incubator/osdu-ld/build/context.ld.json
+"@context":
+  dc: http://purl.org/dc/elements/1.1/
+  foaf: http://xmlns.com/foaf/0.1/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  terms: http://purl.org/dc/terms/
+  protege: http://protege.stanford.edu/plugins/owl/protege#
+  osdu: http://zoic.eu.org/owls/20200721/osdu#
 '@graph':
 - '@id': foaf:holdsAccount
   '@type':
