@@ -1,0 +1,46 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix jsco: <http://aucampia.gitlab.io/i/20200831/json-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix emrbl: <http://emerson.com/eps/rdf/ontology/bigloop/a/#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+<http://emerson.com/eps/rdf/ontology/bigloop/a>
+    rdf:type owl:Ontology;
+    rdfs:label "EMRSN-BigLoop-OWL";
+    dcterms:license "https://creativecommons.org/licenses/by/4.0/";
+    dc:title "The Emerson Big Loop Ontology";
+    dc:description "An ontology for Emerson's Big Loop";
+    owl:versionIRI <http://emerson.com/eps/rdf/ontology/bigloop/a/version/0.1-snapshot>;
+    owl:versionInfo "0.1-snapshot";
+    .
+
+emrbl:Realization a owl:Class;
+    rdfs:label "Realization";
+    dc:description "A realization";
+    rdfs:subClassOf owl:Thing;
+    .
+
+emrbl:Ensemble a owl:Class;
+    rdfs:label "Ensemble";
+    dc:description "An ensemble";
+    rdfs:subClassOf owl:Thing;
+    rdfs:subClassOf [ a owl:Restriction ; owl:onProperty emrbl:hasRealization ; owl:minCardinality "1"^^xsd:nonNegativeInteger ] ;
+    .
+
+emrbl:hasRealization a rdf:Property;
+    a owl:ObjectProperty;
+    rdfs:label "hasRealization";
+    dc:description "Property for linking a realization to an ensemble";
+    rdfs:domain emrbl:Ensemble;
+    rdfs:range emrbl:Realization;
+    .
+
+
+
+
+
