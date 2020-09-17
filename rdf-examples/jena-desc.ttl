@@ -1,0 +1,21 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ja:     <http://jena.hpl.hp.com/2005/11/Assembler#> .
+@prefix :       <#> .
+
+# https://jena.apache.org/documentation/query/cmds.html
+# https://jena.apache.org/documentation/assembler/
+# https://jena.apache.org/documentation/assembler/assembler-howto.html
+# https://github.com/apache/jena/blob/master/jena-arq/etc/dataset-owl-inf.ttl
+# https://jena.apache.org/documentation/assembler/inside-assemblers.html
+
+<> rdf:type         ja:RDFDataset ;
+    ja:graph :ontModel
+    .
+
+:ontModel rdf:type ja:OntModel ;
+    ja:baseModel
+        [ rdf:type ja:MemoryModel ;
+          ja:content [ja:externalContent <%%FILEPATH%%>] ] ;
+    ja:reasoner
+        [ ja:reasonerURL <http://jena.hpl.hp.com/2003/OWLFBRuleReasoner> ; ] ;
+    .
